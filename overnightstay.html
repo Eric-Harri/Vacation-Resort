@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harris Resort | Booking</title>
+    </head>
+
+    <body>
+        <!-- A page that helps guests plan their overnight stay based on parameters the user selects -->
+        <!-- navigation links -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+
+            </nav>
+        </header>
+        <!-- navigation links -->
+
+        <!-- 
+            This page allows a user to determine how much a hotel room will cost at the resort on a given day for a given room type.
+            To get a price quote, users must:            
+         -->
+
+        <form>
+            <!-- enter their name and email -->
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <h1>Harris Resort Beaches</h1>
+
+
+
+            <fieldset>
+                <legend>Preference</legend>
+                <!-- - select a check-in date
+                         - specify a number of nights for the visit (1 - 28 days)
+                      
+                    -->
+                <label for="location">Location:</label>
+                <select name="location" id="location-select-field">
+                    <option value="">---select location---</option>
+                    <option value="Beach1">This Beach</option>
+                    <option value="Beach2">That Beach</option>
+                    <option value="Beach3">Awesome Beach</option>
+                    <option value="Beach4">Coolest Beach</option>
+                </select>
+
+                <label for="check-in-date">Check-in Date</label>
+                <input type="date" name="checkInDate" id="check-in-date">
+            </fieldset>
+
+            <table>
+                <thead>
+                    <th>Room Type</th>
+                    <th>Max Occupancy</th>
+                    <th>Jun - Aug Per Night</th>
+                    <th>Rest of Year Rates Per Night</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Queen</td>
+                        <td>5 (inc rollaway)</td>
+                        <td>250.00</td>
+                        <td>150.00</td>
+                    </tr>
+                    <tr>
+                        <td>King</td>
+                        <td>2</td>
+                        <td>250.00</td>
+                        <td>150.00</td>
+                    </tr>
+                    <tr>
+                        <td>2-Bedroom Suite</td>
+                        <td>6 (inc sleeper sofa)</td>
+                        <td>350.00</td>
+                        <td>210.00</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+            <fieldset>
+                <!-- select a room type (use radio buttons that specify: Queen, King, 2-Bedroom Suite)  -->
+                <legend>Rooms</legend>
+                <input type="radio" name="room-select" id="queen-select-btn" value="queen">
+                <label for="queen-radio-btn">Queen</label>
+                <input type="radio" name="room-select" id="king-select-btn" value="king">
+                <label for="King">King</label>
+                <input type="radio" name="room-select" id="2bed-select-btn" value="2-bed-suite">
+                <label for="2-bed-suite">2-Bedroom Suite</label>
+            </fieldset>
+
+
+
+            <div>
+                <fieldset>
+                    <legend>Specifics </legend>
+                    <!-- specify the number of adults (1 - 4) and number of children (0 - 4) that will stay in the room being reserved -->
+                    <label for="num-nights">Number of Nights</label>
+                    <input type="number" name="numNights" id="num-nights">
+
+                    <label for="num-adults">Number of adults:</label>
+                    <input type="number" name="numOfAdults" id="num-adults">
+
+                    <label for="num-children">Number of children:</label>
+                    <input type="number" name="numOfChildren" id="num-children">
+
+                    <label for="num-nights">Number of Nights</label>
+                    <input type="number" name="numNights" id="num-nights">
+                </fieldset>
+            </div>
+
+            <fieldset>
+                <legend>Discounts</legend>
+                <!-- select whether they will use any discounts (use radio buttons that specify: None, AAA/Senior (10%), and Military (20%)) -->
+                <input type="radio" name="discount-radio" id="none-radio" value="none"> 
+                <label for="none">none</label>
+
+                <input type="radio" name="discount-radio" id="senior-radio" value="aaa/senior">
+                <label for="aaa-senior">AAA/Senior</label>
+
+                <input type="radio" name="discount-radio" id="military-radio" value="military">
+                <label for="military-radio">Military</label>
+
+            </fieldset>
+            <br>
+            <input type="submit" value="Submit" onclick="getRoomRate();">
+
+        </form>
+        <script src="./scripts/main.js"></script>
+    </body>
+
+</html>
