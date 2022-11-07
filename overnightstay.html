@@ -28,7 +28,7 @@
             To get a price quote, users must:            
          -->
 
-        <form>
+        <form onchange="getRoomRate(event);">
             <!-- enter their name and email -->
             <div>
                 <label for="name">Name:</label>
@@ -114,13 +114,11 @@
                     <input type="number" name="numNights" id="num-nights">
 
                     <label for="num-adults">Number of adults:</label>
-                    <input type="number" name="numOfAdults" id="num-adults">
+                    <input type="number" name="numOfAdults" id="num-adults" max="4">
 
                     <label for="num-children">Number of children:</label>
-                    <input type="number" name="numOfChildren" id="num-children">
+                    <input type="number" name="numOfChildren" id="num-children" max="4">
 
-                    <label for="num-nights">Number of Nights</label>
-                    <input type="number" name="numNights" id="num-nights">
                 </fieldset>
             </div>
 
@@ -138,7 +136,28 @@
 
             </fieldset>
             <br>
-            <input type="submit" value="Submit" onclick="getRoomRate();">
+            <input type="submit" value="Submit">
+
+           <table>
+            <tbody>
+                <tr>
+                    <td>Total Room Cost:</td>
+                    <td id="totalRoomCost"></td>
+                </tr>
+                <tr>
+                    <td>Total Discount:</td>
+                    <td id="totalDiscountCost"></td>
+                </tr>
+                <tr>
+                    <td>Total Adults + Children:</td>
+                    <td id="totalAdultChildren"></td>
+                </tr>
+                <tr>
+                    <td>Total Cost:</td>
+                    <td id="totalCost"></td>
+                </tr>
+            </tbody>
+           </table>
 
         </form>
         <script src="./scripts/main.js"></script>
